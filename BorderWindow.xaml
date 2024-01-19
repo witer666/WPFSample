@@ -1,0 +1,67 @@
+﻿<Window x:Class="PICTPWApp.BorderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PICTPWApp"
+        mc:Ignorable="d"
+        Title="BorderWindow" Height="450" Width="800" AllowsTransparency="True" Background="Transparent" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid Background="Transparent">
+        <Border CornerRadius="8" BorderThickness="0" BorderBrush="White" Background="White" Margin="10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity="0.6" Color="#000000"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Border CornerRadius="8 8 0 0" Height="42" BorderThickness="0" BorderBrush="White" Background="Tan">
+                        <DockPanel Margin="25 0 0 0">
+                            <Label Content="窗体标题" FontSize="16" VerticalAlignment="Center" VerticalContentAlignment="Center"></Label>
+                            <DockPanel HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center">
+                                <Label Content="X" Name="LabelClose" MouseLeftButtonDown="LabelClose_MouseLeftButtonDown"/>
+                            </DockPanel>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Grid.Row="2" HorizontalAlignment="Right">
+                    <Thumb Name="resizeThumb" Width="10" Height="5" Cursor="SizeAll" ToolTip="Drag to resize" DragDelta="ResizeThumb_DragDelta">
+                        <Thumb.Template>
+                            <ControlTemplate>
+                                <Canvas>
+                                    <Canvas.Triggers>
+                                        <EventTrigger RoutedEvent="Canvas.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation To="0.6" Duration="0:0:0.05" Storyboard.TargetName="resizeEllipse" Storyboard.TargetProperty="Opacity" AccelerationRatio="1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="Canvas.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation To="1" Duration="0:0:0.05" Storyboard.TargetName="resizeEllipse" Storyboard.TargetProperty="Opacity" AccelerationRatio="1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="Canvas.MouseLeftButtonDown">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation To="1" Duration="0:0:0.05" Storyboard.TargetName="resizeEllipse" Storyboard.TargetProperty="Opacity" AccelerationRatio="1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Canvas.Triggers>
+                                    <Ellipse Name="resizeEllipse" Width="10" Height="5" Fill="Transparent" Stroke="Transparent" StrokeThickness="1" />
+                                </Canvas>
+                            </ControlTemplate>
+                        </Thumb.Template>
+                    </Thumb>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
