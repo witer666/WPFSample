@@ -20,10 +20,10 @@ namespace PICTPWApp
     /// <summary>
     /// BorderWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class BorderWindow : Window
+    public partial class DashboardWindow : Window
     {
         int angelCurrent, angleNext = 0;
-        public BorderWindow()
+        public DashboardWindow()
         {
             InitializeComponent();
 

@@ -1,0 +1,19 @@
+﻿<Window x:Class="PICTPWApp.PathWord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PICTPWApp"
+        mc:Ignorable="d"
+        Title="PathWord" Height="450" Width="800">
+    <Viewbox>
+        <Grid>
+            <Canvas Width="800" Height="400">
+                <Path Data="M50 50H130V60H50M85 60V130H95V60M50 130H130V140H50" Fill="Gold"/>
+                <Path Data="M160 95A40,45 0 1 0 160 94M170 95A30,43 0 1 0 170 94Z" Fill="Red"/>
+                <Path Data="M265 50L285,90V140H295V90L315,50L305,50L290,80L275,50" Fill="Blue"/>
+            </Canvas>
+            <Path Data="M196.608 761.856h-49.664v-148.992h49.664v148.992zM268.8 761.856h-44.544v-148.992h59.392l26.624 93.184 26.112-93.184h59.392v148.992h-43.52v-45.568l1.024-23.552 2.56-26.624h-1.024l-26.624 95.744h-33.792l-27.648-95.744 1.536 22.016 1.536 23.552v50.176zM457.728 761.856H409.6l53.248-148.992h49.664l53.248 148.992H517.12l-5.12-19.456h-48.64l-5.632 19.456z m46.08-51.2l-16.384-53.248-15.36 53.248h31.744zM727.552 679.936v81.92h-31.744l-1.536-14.336c-9.728 11.264-25.088 16.896-45.568 16.896-46.592-2.048-70.656-27.136-72.192-75.264 2.56-51.2 28.672-77.824 77.824-80.384 39.936 1.024 64 19.456 71.168 55.296h-47.104c-3.072-12.288-11.776-18.432-25.088-18.432-18.432 0.512-27.648 15.36-28.16 43.52 0.512 27.136 11.264 40.448 31.744 40.448 12.8-1.536 21.504-7.168 25.088-16.896h-22.016v-32.256h67.584zM881.152 761.856h-124.928v-148.992h122.368v34.816h-72.704v20.992h61.44v34.816h-61.44v23.552h75.264v34.816z" Fill="Green"></Path>
+        </Grid>
+    </Viewbox>
+</Window>
